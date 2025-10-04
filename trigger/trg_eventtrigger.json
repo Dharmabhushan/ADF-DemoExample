@@ -1,0 +1,24 @@
+{
+	"name": "trg_eventtrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Event_Trigger",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/storageinput/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/b02aed44-cc78-4fe5-86d4-7dea71da6482/resourceGroups/ETLRescourceGroup/providers/Microsoft.Storage/storageAccounts/etladfstorageaccount",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

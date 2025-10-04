@@ -1,0 +1,26 @@
+{
+	"name": "DS_EventTrigger",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LN_EventTrigger",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "EventTrigger"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "storageinput"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,42 @@
+{
+	"name": "DS_TublingWindowDestination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LN_TumblingWindowDestination",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "TumblingWindow"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "sensor_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "reading_time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "temperature",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "humidity",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "sensor_data"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

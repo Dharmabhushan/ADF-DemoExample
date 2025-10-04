@@ -1,0 +1,50 @@
+{
+	"name": "DS_JsonComplexScouce",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LN_JsonComplexScouce",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "JsonComplex"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "People_Complex.json",
+				"container": "jsoninput"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"people": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							},
+							"gender": {
+								"type": "string"
+							},
+							"age": {
+								"type": "integer"
+							},
+							"number": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

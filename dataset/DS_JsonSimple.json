@@ -1,0 +1,39 @@
+{
+	"name": "DS_JsonSimple",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LN_JSONSimple",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Json-Simple"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sensor_data_hierarchy.json",
+				"container": "jsoninput"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"sensor_id": {
+					"type": "integer"
+				},
+				"temperature": {
+					"type": "number"
+				},
+				"humidity": {
+					"type": "number"
+				},
+				"timestamp": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,39 @@
+{
+	"name": "DS_TumblingWindow_Source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LN_TumblingWindowSource",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "TumblingWindow"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SensorID",
+				"type": "String"
+			},
+			{
+				"name": "Timestamp",
+				"type": "String"
+			},
+			{
+				"name": "Temperature",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
