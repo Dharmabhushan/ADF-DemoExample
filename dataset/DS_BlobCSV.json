@@ -5,6 +5,14 @@
 			"referenceName": "LN_BlobCSV",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"dataset_FilePath": {
+				"type": "string"
+			},
+			"dataset_FileName": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "csvToAzure"
 		},
