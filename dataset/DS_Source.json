@@ -2,16 +2,30 @@
 	"name": "DS_Source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LN_Bloblink",
+			"referenceName": "LN_BlobCSV",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"dataset_filepath": {
+				"type": "string"
+			},
+			"dataset_filename": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "people.csv",
-				"container": "input"
+				"fileName": {
+					"value": "@dataset().dataset_filename",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().dataset_filepath",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
