@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "@{'input'}//@{'Sample_Data.csv'}"
+					},
+					{
+						"name": "Destination",
+						"value": "@{'dbo'}.@{'sampledata'}"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
