@@ -5,6 +5,14 @@
 			"referenceName": "LN_AzureSQL",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Dataset_schemas": {
+				"type": "string"
+			},
+			"dataset_Tables": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "csvToAzure"
 		},
@@ -12,8 +20,14 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "people"
+			"schema": {
+				"value": "@dataset().Dataset_schemas",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().dataset_Tables",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
